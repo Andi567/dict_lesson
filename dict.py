@@ -40,4 +40,28 @@ print (person['phone']['mobile_phone'])
 #print (person.keys ())
 
 # Методы словарей (все методы в dict_methods.txt)
+print (person.values()) # Возвращает значения словаря
+print (person.keys())   # Возвращает ключи в словаре
+print (person['name'].values()) # Можно забирать значения вложенного словаря
 
+val1 = person['name'].pop('middle_name')   # Удаляет ключ и значение из словаря и сохраняет занчение в переменную
+val2 = person['name'].get('middle_name')   # Возвращает значение по ключу
+if val2 != None:  
+    print('Ключа middle_name нет')  # Если ключа нет, get() возвращает None
+
+#print(person['name']['middle_name'])    # Это вызовет ошибку, лучше пользоваться get()
+
+
+# ЗАДАНИЕ
+# Имеется словарь
+author = {"php":"Rasmus Lerdorf",
+        "perl":"Larry Wall",
+        "tcl":"John Ousterhout",
+        "awk":"Brian Kernighan",
+        "java":"James Gosling",
+        "parrot":"Simon Cozens",
+        "python":"Guido van Rossum"
+        }
+
+# Необходимо вывести пары ключ - значение в алфавитном порядке ключа
+# Сначала awk  -  Brian Kernighan, java  -  James Gosling и т.д.

@@ -1,3 +1,9 @@
+https://tproger.ru/explain/python-dictionaries/
+https://pythonworld.ru/tipy-dannyx-v-python/slovari-dict-funkcii-i-metody-slovarej.html
+https://www.ibm.com/developerworks/ru/library/l-python_part_4/index.html
+
+sorted (dict) - возвращает сортированный спиcок ключей
+
 dict.clear() - очищает словарь.
 
 dict.copy() - возвращает копию словаря.
