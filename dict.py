@@ -19,11 +19,12 @@ d3 = dict ([(12,13), (14,15)])   # ([(ключ, значение), (ключ, з
 print (d3)                      
 
 # Способ №3 - с помощью метода dict.fromkeys()
-d4 = dict.fromkeys(['a', 'b'],1)    # создает словарь с 2мя ключами и им всем присваивает 1
+d4 = dict.fromkeys(['a', 'b'])    # создает словарь с 2мя ключами и им всем присваивает 1
 print (d4)
 
+import random
 # Способ №4 - с помощью генераторов словарей
-d5 = {a: a ** 2 for a in range(7)}
+d5 = {a: random.randint(0,100) for a in range(7)}
 print (d5)
 
 
@@ -45,8 +46,11 @@ print (person.keys())   # Возвращает ключи в словаре
 print (person['name'].values()) # Можно забирать значения вложенного словаря
 
 val1 = person['name'].pop('middle_name')   # Удаляет ключ и значение из словаря и сохраняет занчение в переменную
+print (person['name'])
+
+#print(person['name']['middle_name'])
 val2 = person['name'].get('middle_name')   # Возвращает значение по ключу
-if val2 != None:  
+if val2 == None:  
     print('Ключа middle_name нет')  # Если ключа нет, get() возвращает None
 
 #print(person['name']['middle_name'])    # Это вызовет ошибку, лучше пользоваться get()
@@ -65,3 +69,17 @@ author = {"php":"Rasmus Lerdorf",
 
 # Необходимо вывести пары ключ - значение в алфавитном порядке ключа
 # Сначала awk  -  Brian Kernighan, java  -  James Gosling и т.д.
+
+for lang in sorted(author):
+        print (lang, author.get(lang))
+
+from copy import deepcopy 
+
+author2 = deepcopy(author)
+print(author2)
+
+#author.clear()
+#del author
+author['php'] = 'Andy'
+print(author)
+print(author2)
